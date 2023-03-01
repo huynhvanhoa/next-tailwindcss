@@ -2,10 +2,13 @@ import React from "react";
 import Image from "next/image";
 import next from "../public/next.svg";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
+  const router = useRouter();
+
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
   return (
@@ -13,7 +16,7 @@ const Header = () => {
       <nav className="w-full flex md:justify-center justify-between items-center p-4">
         <div className="md:flex-[0.8] flex-initial justify-center items-center">
           <Link href="/">
-            <Image src={next} alt="Picture of logo" width={150} height={150} />
+            <Image src={next} alt="Picture of logo" width={120} />
           </Link>
         </div>
 
@@ -21,30 +24,35 @@ const Header = () => {
           <Link
             href="/karaoke"
             className="hover:text-[#9ba1b5] mx-4 cursor-pointer"
+            {...(router.pathname === "/karaoke" && { className: "active" })}
           >
             Karaoke
           </Link>
           <Link
             href="/phim-anh"
             className="hover:text-[#9ba1b5] mx-4 cursor-pointer"
+            {...(router.pathname === "/phim-anh" && { className: "active" })}
           >
             Phim Ảnh
           </Link>
           <Link
             href="/video"
             className="hover:text-[#9ba1b5] mx-4 cursor-pointer"
+            {...(router.pathname === "/video" && { className: "active" })}
           >
             Video
           </Link>
           <Link
             href="/tin-tuc"
             className="hover:text-[#9ba1b5] mx-4 cursor-pointer"
+            {...(router.pathname === "/tin-tuc" && { className: "active" })}
           >
             Tin Tức
           </Link>
           <Link
             href="/login"
             className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
+            {...(router.pathname === "/login" && { className: "active" })}
           >
             Login
           </Link>
@@ -69,24 +77,30 @@ const Header = () => {
               <Link
                 href="/karaoke"
                 className="hover:text-[#9ba1b5] mx-4 cursor-pointer my-2 text-lg"
+                {...(router.pathname === "/karaoke" && { className: "active" })}
               >
                 Karaoke
               </Link>
               <Link
                 href="/phim-anh"
                 className="hover:text-[#9ba1b5] mx-4 cursor-pointer my-2 text-lg "
+                {...(router.pathname === "/phim-anh" && {
+                  className: "active",
+                })}
               >
                 Phim Ảnh
               </Link>
               <Link
                 href="/video"
                 className="hover:text-[#9ba1b5] mx-4 cursor-pointer my-2 text-lg"
+                {...(router.pathname === "/video" && { className: "active" })}
               >
                 Video
               </Link>
               <Link
                 href="/tin-tuc"
                 className="hover:text-[#9ba1b5] mx-4 cursor-pointer my-2 text-lg"
+                {...(router.pathname === "/tin-tuc" && { className: "active" })}
               >
                 Tin Tức
               </Link>

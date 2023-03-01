@@ -60,6 +60,7 @@ body {
 .bg__header .active {
   color: rgb(74, 250, 4);
   text-transform: uppercase;
+  padding-right: 15px;
 }
 .bg__mobi {
   background: var(--gradient-bg1);
@@ -69,6 +70,14 @@ body {
 .bg__footer {
   background: var(--gradient-bg4);
   background-color: var(--black);
+}
+.bg__nopage {
+  min-height: 82.5vh;
+  min-width: 500px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main {
   min-height: 82.5vh;
