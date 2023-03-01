@@ -104,6 +104,16 @@ const Header = () => {
               >
                 Tin Tức
               </Link>
+              <div className="w-10/12 m-5">
+                <hr />
+              </div>
+              <Link
+                href="/login"
+                className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
+                {...(router.pathname === "/login" && { className: "active" })}
+              >
+                Login
+              </Link>
             </div>
           )}
         </div>
